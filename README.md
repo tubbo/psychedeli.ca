@@ -1,0 +1,3 @@
+# psychedeli.ca
+
+a blog
