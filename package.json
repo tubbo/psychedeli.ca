@@ -7,7 +7,7 @@
     "build": "next build",
     "start": "next start",
     "test": "jest",
-    "lint": "eslint --ext js --ext ts --ext tsx",
+    "lint": "eslint --ext js --ext ts --ext tsx .",
     "fmt": "prettier --write ."
   },
   "dependencies": {
