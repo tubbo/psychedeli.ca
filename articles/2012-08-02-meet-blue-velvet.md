@@ -4,22 +4,19 @@ title: meet blue_velvet
 category: code
 date: 2012-08-02
 tags:
-- "#facebook"
-- "#open_graph"
-- "`blue_velvet"
-- ruby
+  - "#facebook"
+  - "#open_graph"
+  - "`blue_velvet"
+  - ruby
 description: |
   It's certainly been a while, hasn't it? I've been busy with gigs and
   vacation, so there's been little time to blog. I have been working on
   stuff...including the foundation of a record label (which I'll talk about
   in a future post) and maintaining the Wonder Bars' official website.
-
 ---
 
-
-
 It's certainly been a while, hasn't it? I've been busy with gigs and
-vacation, so there's been little time to blog. I *have* been working on
+vacation, so there's been little time to blog. I _have_ been working on
 stuff...including the foundation of a record label (which I'll talk about
 in a future post) and maintaining the Wonder Bars' official website.
 
@@ -34,17 +31,17 @@ either text-only or HTML-only. Now you're looking at converting content,
 and for non-programmers this may just not be a reality, or if it is it's
 a nightmare at best.
 
-Something needs to be done. This is the 21st century, after all. With the 
+Something needs to be done. This is the 21st century, after all. With the
 power of [Ruby on Rails][ror] and [Rails engines][ren], however, there
-*is* a solution.
+_is_ a solution.
 
 ## introducing blue_velvet
 
-[blue_velvet][bvg] is a gem I extracted from working code on 
+[blue_velvet][bvg] is a gem I extracted from working code on
 [TheWonderBars.com][twb]. The live production codebase uses
-the gem with all of its default settings. You probably didn't 
-notice, which was the whole point. The gem code is an exact 
-duplicate of the code that previously powered this functionality 
+the gem with all of its default settings. You probably didn't
+notice, which was the whole point. The gem code is an exact
+duplicate of the code that previously powered this functionality
 on the site, so you're getting what I was working with; a powerful,
 convention-over-configuration engine for displaying Facebook attributes
 on your own, hosted, well-designed site.
@@ -53,17 +50,17 @@ on your own, hosted, well-designed site.
 
 Sound fun? It's real easy to get started!
 
-Just add 
+Just add
 
     gem 'blue_velvet'
 
-to your Gemfile, run 
+to your Gemfile, run
 
     bundle
-    
+
 and generate the configuration using
 
-    rails g facebook:config 
+    rails g facebook:config
 
 Generate a new Facebook app on <http://developers.facebook.com>. Enter
 in your **App ID** and **App Secret** keys to the proper YAML
@@ -81,7 +78,7 @@ to your Facebook page's attributes like so:
 Now type `rails server` and visit <http://localhost:3000/about>, and you
 should see the content of your page's "Description" field. Since this
 was designed to be used in a [PJAX][pj]-style environment, the
-attributes are served as partials. 
+attributes are served as partials.
 
 ## advanced usage
 
@@ -103,7 +100,7 @@ together:
 You can have any controller access that `facebook` object by simply
 inheriting from `Facebook::PageController`. You must cache values from
 the Facebook page into instance variables for them to become available
-in the view layer. Any attribute that can be obtained via the Page Graph API 
+in the view layer. Any attribute that can be obtained via the Page Graph API
 can be referenced here in some way. Use the `rails console` to explore
 more about the `facebook` object.
 
@@ -123,4 +120,3 @@ and contribute a pull request, I welcome all kinds!
 [ren]: http://edgeguides.rubyonrails.org/engines.html
 [bvg]: http://github.com/tubbo/blue_velvet
 [bvi]: https://github.com/tubbo/blue_velvet/issues
-

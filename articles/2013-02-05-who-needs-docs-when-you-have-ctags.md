@@ -4,10 +4,10 @@ title: who needs docs when you have ctags
 category: code
 date: 2013-02-05
 tags:
-- ctags
-- documentation
-- vim
-- lifesavers
+  - ctags
+  - documentation
+  - vim
+  - lifesavers
 description: |
   Ever since I watched Aaron Patterson's Peepcode Play-by-Play,
   I've been absolutely fascinated with the use of CTags to jump around
@@ -20,10 +20,7 @@ description: |
   on the BSD UNIX project (it was originally released with BSD UNIX),
   it was championed as a quick, easy and light-weight way of moving
   around a codebase.
-
 ---
-
-
 
 Ever since I watched [Aaron Patterson's Peepcode Play-by-Play][pbp],
 I've been absolutely fascinated with the use of CTags to jump around
@@ -126,7 +123,7 @@ the different method definitions, showing the evolution of the code
 that you will eventually run as you call that method from a higher level.
 
 It's so much easier to get work done when leaving the editor is only done
-when you're *really* done coding or you need to look up something that
+when you're _really_ done coding or you need to look up something that
 maybe isn't explained quite well in the documentation, as is the case
 with many of Rails' lesser-known methods (especially those nice little
 helpers in the view layer).

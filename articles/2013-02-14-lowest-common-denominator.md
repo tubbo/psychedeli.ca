@@ -4,10 +4,10 @@ title: lowest common denominator
 category: music
 date: 2013-02-14
 tags:
-- pop
-- music
-- edm
-- mainstream
+  - pop
+  - music
+  - edm
+  - mainstream
 description: |
   We hear a lot of talk by musicians and other "insiders" (who are mostly
   either aficionados or amateur musicians who aren't doing this kind of
@@ -22,10 +22,7 @@ description: |
   seen it in real life!) or take care to not ruin their fans' ears, is
   both sad and hilarious at the same time. After all, your fans aren't
   going to buy your music anymore if they can't hear it...
-
 ---
-
-
 
 We hear a lot of talk by musicians and other "insiders" (who are mostly
 either aficionados or amateur musicians who aren't doing this kind of
@@ -36,14 +33,14 @@ We hear about DJs not constructing their set in the same way as they
 used to, with less variation and care taken to the actual sound levels.
 The fact that there are people who are paid more money in an hour than
 most of us are paid in a day, and they aren't even really making sure
-they don't redline the mixer (which actually *can* cause damage, I've
+they don't redline the mixer (which actually _can_ cause damage, I've
 seen it in real life!) or take care to not ruin their fans' ears, is
 both sad and hilarious at the same time. After all, your fans aren't
 going to buy your music anymore if they can't hear it...
 
 Anyway, I'm off track. This post is supposed to be positive, to show
 the average [gormandizer][gd] that there isn't some big conspiracy
-going on and the electronic music community *needs* people like
+going on and the electronic music community _needs_ people like
 Skrillex, Deadmau5, and even Tiesto to further its stranglehold on
 our eardrums. Even though these guys might be less skilled than
 others who get paid/credited for less, we need them as "evangelists"
@@ -72,14 +69,14 @@ Electric Factory in Philly. It took a couple years, but now we're
 seeing an absolute explosion in just about everything that has to do
 with EDM...
 
-* There have been 3, count 'em!, THREE new venues in the last 2 years
+- There have been 3, count 'em!, THREE new venues in the last 2 years
   alone that have produced a purely electronic bill every night they're
   open. This is proof that even in the hardest city to musically make it in
-  America, you can *still* turn a profit by booking electronic acts.
-* Attendance at PEX parties has increased exponentially every year.
+  America, you can _still_ turn a profit by booking electronic acts.
+- Attendance at PEX parties has increased exponentially every year.
   HeartBurn was cancelled this year for the first time in its history
   because a suitable venue could not be found in time.
-* If you have a crew of DJs in Philly and a warehouse you have instant
+- If you have a crew of DJs in Philly and a warehouse you have instant
   success. Period. There's such a small scene here that those of us
   who just love that warehouse vibe are forced to go out and hear music
   like Trap and ratchet-y Dubstep that we may not go out to hear

@@ -4,11 +4,11 @@ title: minitest is still wonderful
 category: code
 date: 2013-02-15
 tags:
-- ruby
-- minitest
-- rspec
-- tdd
-- bdd
+  - ruby
+  - minitest
+  - rspec
+  - tdd
+  - bdd
 description: |
   So after posting my article on how to use assertions in rspec, I
   was involved in a discussion with @cheapRoc over the discovery
@@ -16,10 +16,7 @@ description: |
   surprise, it seemed @seattlerb was following at least one of us
   and overheard our conversation, mistaking my quite hyperbolic statement
   for a diss on Minitest.
-
 ---
-
-
 
 So after posting my [article on how to use assertions in rspec][ass], I
 was involved in a discussion with [@cheapRoc][jr] over the discovery
@@ -31,7 +28,7 @@ for a diss on Minitest.
 This was not the case. I still love and use Minitest every day.
 [This blog is tested using Minitest][tests], and we use Minitest at work
 to run a giant test suite that takes over a half-hour to complete
-(*without* the smoke tests!). What has happened here is a colossal
+(_without_ the smoke tests!). What has happened here is a colossal
 misunderstanding on my part about what Minitest actually is. Basically,
 I was under the impression that Test::Unit had been totally and
 unabashedly replaced by Minitest when Ruby 1.9 was released. While

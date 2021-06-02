@@ -4,9 +4,9 @@ title: introducing active copy
 category: code
 date: 2014-01-26
 tags:
-- rails
-- ruby
-- blogging
+  - rails
+  - ruby
+  - blogging
 description: |
   If you've ever browsed the source code of this blog, you might
   have noticed a directory called lib/active_copy. Opening up that
@@ -14,10 +14,7 @@ description: |
   I take Markdown files with YAML front matter and render them through
   ActionView. But unfortunately, unless you fork this repo and hack it to
   bits, you were unable to use ActiveCopy in your own Rails projects.
-
 ---
-
-
 
 If you've ever browsed [the source code][repo] of this blog, you might
 have noticed a directory called **lib/active_copy**. Opening up that

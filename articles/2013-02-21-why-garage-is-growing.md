@@ -4,10 +4,10 @@ title: why garage is growing
 category: music
 date: 2013-02-21
 tags:
-- garage
-- ukg
-- edm
-- commentary
+  - garage
+  - ukg
+  - edm
+  - commentary
 description: |
   This began as a response on Facebook to a friend of mine and I
   felt like more people should know my thoughts on why UK Garage is more
@@ -16,8 +16,6 @@ description: |
   that even, I just didn't know it yet..) and been noticing some exciting
   changes in its projected legitimacy and adoption.
 ---
-
-
 
 This began as a response on Facebook to [a friend of mine][c43] and I
 felt like more people should know my thoughts on why UK Garage is more
@@ -31,13 +29,13 @@ changes in its projected legitimacy and adoption.
 Being a DJ at the time, I was first turned on to UKG by Todd "The God"
 Edwards with his remix of [St. Germain - Alabama Blues][ab]. Not only
 is it still one of my favorite UKG tracks, it's also one of my favorite
-*dance* music tracks, period. It still gets me moving and shaking and
+_dance_ music tracks, period. It still gets me moving and shaking and
 a lot of my best produced music has been influenced, directly, by the
 sounds and production values I first heard in that tune.
 
 So that was a UKG song, but it was played in a [Daft Punk set][dps], so
 I wasn't aware that it was Garage. Not only that, but pretty much any
-DJ I played the tune for didn't know it existed *and* loved the song
+DJ I played the tune for didn't know it existed _and_ loved the song
 very much. This begged a fascinating question: **Why didn't UK Garage
 take off in the late 90s?**
 
@@ -71,10 +69,10 @@ thoroughly, I have a few suggestions for why this phenomenon occurred.
    The UK Garage from the old days sounds...well...old! Even though some
    of those classics from [Nice 'N Ripe][nnr] and [Ice Cream][icr] were
    and are still absolute smash hits, there's just no way you can play
-   "Hurt You So '99" in a club these days without catching *some* flack.
+   "Hurt You So '99" in a club these days without catching _some_ flack.
    So "big ups" to MJ, Submerse, Q and [Disclosure][dis] for really showing
    the "vast unwashed" that UK Garage is alive, well, and most of all,
-   still has a *lot* to do!
+   still has a _lot_ to do!
 
 The artists I mentioned above, as well as pretty much anyone who's been
 rocking the Juno Download UKG/UK Funky section have been sacrificing a lot

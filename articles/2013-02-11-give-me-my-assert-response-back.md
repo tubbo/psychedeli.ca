@@ -4,18 +4,15 @@ title: give me my assert_response back!
 category: code
 date: 2013-02-11
 tags:
-- rails
-- upgrade
-- assert_block
-- deprecations
+  - rails
+  - upgrade
+  - assert_block
+  - deprecations
 description: |
   Did you just upgrade Ruby on Rails and now all of your assert_response()
   tests are failing? Simply add the following code to test/test_helper.rb
   and everything will work again!
-
 ---
-
-
 
 Did you [just upgrade Ruby on Rails][cve] and now all of your `assert_response()`
 tests are failing? Simply add the following code to **test/test_helper.rb**
@@ -44,7 +41,7 @@ We have drastically improved this little snippet and ripped a monkey patch direc
 
 <script src="https://gist.github.com/tubbo/5124630.js"></script>
 
-[cve]:  https://groups.google.com/forum/?fromgroups=#!topic/rubyonrails-security/AFBKNY7VSH8
+[cve]: https://groups.google.com/forum/?fromgroups=#!topic/rubyonrails-security/AFBKNY7VSH8
 [iotr]: http://innovationontherun.com
 [r4mp]: https://github.com/rails/rails/blob/master/actionpack/lib/action_dispatch/testing/assertions/response.rb
 [gist]: https://gist.github.com/tubbo/5124630

@@ -4,11 +4,11 @@ title: irssi? in MY notifications center?
 category: gbs
 date: 2013-09-08
 tags:
-- irc
-- irssi
-- osx
-- shell
-- work
+  - irc
+  - irssi
+  - osx
+  - shell
+  - work
 description: |
   As I've said before, I'm constantly working in the shell and have
   found many ways to improve my flow since I began working
@@ -19,10 +19,7 @@ description: |
   possible to get Notifications Center to listen in on my chats and let me
   know when I get new messages. Thanks to alloy's powerful
   terminal-notifier, I can!
-
 ---
-
-
 
 As I've said before, I'm constantly working in [the shell][zsh] and have
 found [many ways to improve my flow][dots] since I began working
@@ -34,7 +31,7 @@ possible to get Notifications Center to listen in on my chats and let me
 know when I get new messages. Thanks to alloy's powerful
 [terminal-notifier][tn], I can!
 
-* * *
+---
 
 Like I said, I run [irssi][irssi] through my own VPS which is running an
 [irssi-proxy][proxy] to keep me connected all the time. This way,
@@ -83,7 +80,7 @@ to your nick instead of 'tubbo' to get it working right:
 
 ```perl
 -privmsgs -command 'exec /usr/local/bin/terminal-notifier -message "$\M" -title "$\N"'
--publics -regexp 'tubbo' -command 'exec /usr/local/bin/terminal-notifier -message "$\M" -title "$\N ($\C)"' 
+-publics -regexp 'tubbo' -command 'exec /usr/local/bin/terminal-notifier -message "$\M" -title "$\N ($\C)"'
 ```
 
 You should be able to just paste those lines into `~/.irssi/triggers` (a

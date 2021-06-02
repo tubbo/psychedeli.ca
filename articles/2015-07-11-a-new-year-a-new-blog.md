@@ -4,10 +4,10 @@ title: a new year, a new blog
 category: code
 date: 2015-07-11
 tags:
-- ember.js
-- javascript
-- s3
-- aws
+  - ember.js
+  - javascript
+  - s3
+  - aws
 description: |
   Well it's been a little over two years since I last completely
   reconfigured this blog, and now that it actually (mostly) works I felt
@@ -16,10 +16,7 @@ description: |
   Ember.js, and the entire blog application lives on your
   browser, hosted via Amazon's CDN. This post explains how I
   built a pseudo-static web site with Ember and Ember Data.
-
 ---
-
-
 
 Well it's been a little over two years since I last completely
 reconfigured this blog, and now that it actually (mostly) works I felt
@@ -132,40 +129,53 @@ instantiates the objects that are required to compile the files in that
 directory:
 
 ```javascript
-import path from 'path';
-import fs from 'fs';
-import Template from './template';
-import Index from './index';
+import path from "path";
+import fs from "fs";
+import Template from "./template";
+import Index from "./index";
 
 export default function compile(directory) {
   let root = process.cwd(),
-      source = path.join(root, 'app', directory),
-      destination = path.join(root, 'public', directory),
-      index = new Index(destination, directory);
+    source = path.join(root, "app", directory),
+    destination = path.join(root, "public", directory),
+    index = new Index(destination, directory);
 
-  fs.mkdir(destination, function(error) {
+  fs.mkdir(destination, function (error) {
     // swallow errors
   });
 
-  fs.readdir(source, function(dirReadError, files) {
-    if (dirReadError) { throw dirReadError; }
+  fs.readdir(source, function (dirReadError, files) {
+    if (dirReadError) {
+      throw dirReadError;
+    }
 
-    files.forEach(function(filename) {
-      fs.readFile(path.join(source, filename), { encoding: 'utf-8' }, function(fileReadError, contents) {
-        if (fileReadError) { throw fileReadError; }
+    files.forEach(function (filename) {
+      fs.readFile(
+        path.join(source, filename),
+        { encoding: "utf-8" },
+        function (fileReadError, contents) {
+          if (fileReadError) {
+            throw fileReadError;
+          }
 
-        let template = new Template(filename, contents, destination, directory);
+          let template = new Template(
+            filename,
+            contents,
+            destination,
+            directory
+          );
 
-        if (template.publishable) {
-          template.compile();
-          index.push(template);
-        } else {
-          console.warn("Template", template.id, "will not be published.");
+          if (template.publishable) {
+            template.compile();
+            index.push(template);
+          } else {
+            console.warn("Template", template.id, "will not be published.");
+          }
         }
-      });
+      );
     });
   });
-};
+}
 ```
 
 This is a lot of code, but trust that it all makes sense to live inside
@@ -209,7 +219,7 @@ following change to my `ApplicationAdapter` in order to get Ember-Data
 to read its "API" properly:
 
 ```javascript
-import DS from 'ember-data';
+import DS from "ember-data";
 
 export default DS.JSONAPIAdapter.extend({
   /**
@@ -219,9 +229,9 @@ export default DS.JSONAPIAdapter.extend({
    * @param string modelName
    * @param string id
    */
-  _buildURL: function(modelName, id) {
-    return this._super(modelName, id) + '.json';
-  }
+  _buildURL: function (modelName, id) {
+    return this._super(modelName, id) + ".json";
+  },
 });
 ```
 
@@ -229,11 +239,11 @@ The models were made as conventionally as possible. For example, here is
 the definition of `Page`:
 
 ```javascript
-import DS from 'ember-data';
+import DS from "ember-data";
 
 export default DS.Model.extend({
-  title: DS.attr('string'),
-  body: DS.attr('string')
+  title: DS.attr("string"),
+  body: DS.attr("string"),
 });
 ```
 
@@ -242,52 +252,61 @@ sorted in any special way. Compare that with the source for the
 `Article` model:
 
 ```javascript
-import DS from 'ember-data';
+import DS from "ember-data";
 
 export default DS.Model.extend({
-  title: DS.attr('string'),
-  date: DS.attr('date'),
-  category: DS.attr('string'),
-  tags: DS.attr('string'),
-  body: DS.attr('string'),
+  title: DS.attr("string"),
+  date: DS.attr("date"),
+  category: DS.attr("string"),
+  tags: DS.attr("string"),
+  body: DS.attr("string"),
 
-  year: function() {
-    return this.get('_splitID')[0];
-  }.property('_splitID'),
+  year: function () {
+    return this.get("_splitID")[0];
+  }.property("_splitID"),
 
-  month: function() {
-    return this.get('_splitID')[1];
-  }.property('_splitID'),
+  month: function () {
+    return this.get("_splitID")[1];
+  }.property("_splitID"),
 
-  day: function() {
-    return this.get('_splitID')[2];
-  }.property('_splitID'),
+  day: function () {
+    return this.get("_splitID")[2];
+  }.property("_splitID"),
 
-  href: function() {
-    return this.get('id')
-      .split(this.get('year')+'-').join('')
-      .split(this.get('month')+'-').join('')
-      .split(this.get('day')+'-').join('');
-  }.property('id,year,month,day'),
+  href: function () {
+    return this.get("id")
+      .split(this.get("year") + "-")
+      .join("")
+      .split(this.get("month") + "-")
+      .join("")
+      .split(this.get("day") + "-")
+      .join("");
+  }.property("id,year,month,day"),
 
-  preview: function() {
-    return this.get('body').split("\n\n")[0] + this.get('footnotes');
-  }.property('body'),
+  preview: function () {
+    return this.get("body").split("\n\n")[0] + this.get("footnotes");
+  }.property("body"),
 
-  footnotes: function() {
-    return "\n\n"+this.get('body').split("\n").map(function(line) {
-      if (line.match(/\[(\w+)\]\:\shttp/)) {
-        return line;
-      }
-    }).join("\n");
-  }.property('body'),
+  footnotes: function () {
+    return (
+      "\n\n" +
+      this.get("body")
+        .split("\n")
+        .map(function (line) {
+          if (line.match(/\[(\w+)\]\:\shttp/)) {
+            return line;
+          }
+        })
+        .join("\n")
+    );
+  }.property("body"),
 
   /**
    * @private
    */
-  _splitID: function() {
-    return this.get('id').split('-');
-  }.property('id')
+  _splitID: function () {
+    return this.get("id").split("-");
+  }.property("id"),
 });
 ```
 

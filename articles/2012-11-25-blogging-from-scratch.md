@@ -15,10 +15,7 @@ description: |
   advanced concepts of not only Ruby, but HTTP and web development in general. As it is my
   day job, I do enjoy working in Rails, but sometimes its paradigm just doesn't fit in
   (well) with what I'm trying to do. So I wanted to use something different.
-
 ---
-
-
 
 In case you haven't already figured this out, I am a Ruby programmer. It took me a while
 before I was really comfortable with calling myself a "programmer" when dealing with Ruby,
@@ -116,7 +113,7 @@ guides exist online to use `Pygments.rb` and a Redcarpet renderer to highlight y
 blocks in Markdown.
 
 Next came the problem of the YAML front matter. Rails' templating system is not advanced
-enough to parse *two* templating languages in the same file, sending data from one to the
+enough to parse _two_ templating languages in the same file, sending data from one to the
 model and data from the other as the actual view. Jekyll source files are in fact used
 for two separate things, and since my blog articles are all written with Jekyll's YAML
 front matter at the top, I needed a way to parse out that metadata and display it on the

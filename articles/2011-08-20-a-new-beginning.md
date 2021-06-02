@@ -4,20 +4,18 @@ title: a new beginning
 category: gbs
 date: 2011-08-20
 tags:
-- burning man
-- jekyll
-- ruby
-- javascript
-- wonder bars
-description: 'So here we go, another new layout and another re-hash of this blog''s
+  - burning man
+  - jekyll
+  - ruby
+  - javascript
+  - wonder bars
+description:
+  "So here we go, another new layout and another re-hash of this blog's
   content. I threw away the last two iterations (still have the data, though) of this
-  blog, because I was unsatisfied with the poor content on it. So let''s start again.
+  blog, because I was unsatisfied with the poor content on it. So let's start again.
 
-  '
-
+  "
 ---
-
-
 
 So here we go, another new layout and another re-hash of this blog's content. I threw away the last two iterations (still have the data, though) of this blog, because I was unsatisfied with the poor content on it. So let's start again.
 
@@ -25,11 +23,11 @@ This will be a blog about programming, music, philosophy, and everything in betw
 
 ## first of all, the blog
 
-This blog is not in its final design. I just felt like I needed a place online to express my feelings and my experiences throughout life, and regardless of what it looks like I feel as though it needs to be on my domain, at all costs. That's why I've made deployment as easy as possible. All I have to do is a `git push` to my remote server, and the hook on the remote will generate the [Jekyll][1] site on http://psychedeli.ca, which will then push the update directly to the userbase. Pretty nifty, I think! 
+This blog is not in its final design. I just felt like I needed a place online to express my feelings and my experiences throughout life, and regardless of what it looks like I feel as though it needs to be on my domain, at all costs. That's why I've made deployment as easy as possible. All I have to do is a `git push` to my remote server, and the hook on the remote will generate the [Jekyll][1] site on http://psychedeli.ca, which will then push the update directly to the userbase. Pretty nifty, I think!
 
 ## burning man
 
-I'll be attending [Burning Man][2] this year, but I will not be performing. Instead of gifting music to the playa, I've decided to make this year my vacation. Sometimes I tend to get rather stressed out before and after performing, and I don't want that to encroach on my good time this year on the playa. This year, I'll be gifting something very different to the denizens of Black Rock City. In exchange for a free ride to and from the playa, I'll be driving a 24' Budget truck for another camp, Club Verboten, out of Reno. This is interesting on two levels: First of all, while I have driven rental trucks I've never driven one this big, so that's going to be an adventure in itself getting onto the desert in this thing. Second, I'm going to arrive in Black Rock City about two days before the festival starts. I hear it's a great time, and a unique experience in and of itself, to see the playa before it's really built up. 
+I'll be attending [Burning Man][2] this year, but I will not be performing. Instead of gifting music to the playa, I've decided to make this year my vacation. Sometimes I tend to get rather stressed out before and after performing, and I don't want that to encroach on my good time this year on the playa. This year, I'll be gifting something very different to the denizens of Black Rock City. In exchange for a free ride to and from the playa, I'll be driving a 24' Budget truck for another camp, Club Verboten, out of Reno. This is interesting on two levels: First of all, while I have driven rental trucks I've never driven one this big, so that's going to be an adventure in itself getting onto the desert in this thing. Second, I'm going to arrive in Black Rock City about two days before the festival starts. I hear it's a great time, and a unique experience in and of itself, to see the playa before it's really built up.
 
 ## the wonder bars
 

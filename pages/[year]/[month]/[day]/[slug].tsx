@@ -1,5 +1,10 @@
-import { GetStaticProps } from "next";
-import { findArticle } from "articles";
+import { GetStaticProps, GetStaticPaths } from "next";
+import {
+  Article as ArticleType,
+  findArticle,
+  ArticleParams,
+  findArticlePaths,
+} from "articles";
 import {
   Article,
   ArticleHeader,
@@ -10,7 +15,9 @@ import {
 } from "components/article";
 import { Page } from "components/page";
 
-export default function ArticlePage({ article }) {
+export type ArticlePageProps = { article: ArticleType };
+
+export default function ArticlePage({ article }: ArticlePageProps) {
   return (
     <Page>
       <Article>
@@ -28,10 +35,19 @@ export default function ArticlePage({ article }) {
 
 export const getStaticProps: GetStaticProps = async ({ params }) => {
   try {
-    const article = await findArticle(params);
+    const article = await findArticle(params as ArticleParams);
 
     return { props: { article } };
   } catch (error) {
+    console.error(error);
+
     return { props: { error }, notFound: true };
   }
+};
+
+export const getStaticPaths: GetStaticPaths = async () => {
+  const paths = findArticlePaths();
+  const fallback = true;
+
+  return { paths, fallback };
 };

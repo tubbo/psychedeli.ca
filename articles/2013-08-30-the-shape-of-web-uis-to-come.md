@@ -4,11 +4,11 @@ title: the shape of web uis to come
 category: code
 date: 2013-08-30
 tags:
-- javascript
-- emberjs
-- emberscript
-- emblem
-- waxpoetic
+  - javascript
+  - emberjs
+  - emberscript
+  - emblem
+  - waxpoetic
 description: |
   Recently, I've been very interested in the development of the
   Ember.js framework, which has grown rapidly in the 3 years or
@@ -21,10 +21,7 @@ description: |
   wrote while developing a simple application. But the way
   that Ember worked flies in the face with one of my other favorite
   tools...
-
 ---
-
-
 
 Recently, I've been very interested in the development of the
 [Ember.js][ember] framework, which has grown rapidly in the 3 years or
@@ -33,18 +30,17 @@ with ([most of][eviltrout]) it, and it's gone from something that left
 me truly puzzled into an understandable and almost indispensable
 tool in my web development arsenal. While developing a Backbone app,
 I took a second look at Ember after they released their new
-[routing API][ember-routing], and fell in love with how *little* code I
+[routing API][ember-routing], and fell in love with how _little_ code I
 wrote while [developing a simple application][forthcoming]. But the way
 that Ember worked flies in the face with one of my other favorite
 tools...
 
-* * *
+---
 
 **NOTE:** This post is written from the perspective of a
 [Ruby on Rails][rails] developer, using [ember-rails][ember-rails] to
 generate my content and [ActiveModel::Serializers][ams] for constructing
 my HTTP API.
-
 
 ## ember and coffeescript
 
@@ -120,7 +116,7 @@ $(function() { // alright i guess i don't have to tell you again..
 });
 ```
 
-That's a *little* better, but I feel like we can do a lot more with
+That's a _little_ better, but I feel like we can do a lot more with
 less code. It's a pretty verbose way to say "combine firstName and
 lastName in the return value of this method", we have to specify all of
 the "dependencies" of the method at the bottom and then we still have to
@@ -148,9 +144,9 @@ Now that's what I call progress.
 There's a lot more you can do. Check out the site for everything. Some
 other highlights:
 
-* Directives for observers (`+observer`)
-* The `mixin` keyword for defining mixins
-* The `with` suffix of `extends` that allow you to compose your Ember
+- Directives for observers (`+observer`)
+- The `mixin` keyword for defining mixins
+- The `with` suffix of `extends` that allow you to compose your Ember
   objects using mixins
 
 In my opinion, the combination of Ember.js and EmberScript is already a

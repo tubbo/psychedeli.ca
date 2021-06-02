@@ -20,8 +20,8 @@ export const getStaticProps: GetStaticProps = async () => {
 export default function Home({ articles }: HomePageProps) {
   return (
     <Page>
-      {articles.map((article) => (
-        <ArticleSummary article={article} />
+      {articles.map((article, key) => (
+        <ArticleSummary key={key} article={article} />
       ))}
     </Page>
   );

@@ -4,18 +4,15 @@ title: don't make this simple mistake...
 category: code
 date: 2013-03-01
 tags:
-- ruby
-- bundler
-- rubygems
+  - ruby
+  - bundler
+  - rubygems
 description: |
   install bundler-1.3 before installing Ruby 2.0!
   That should downgrade RubyGems to a point that you can just do a
   gem install bundler to obtain 1.3. Once you begin installing gems
   with 1.3, everything in Ruby 2.0 will work out again.
-
 ---
-
-
 
 ## install bundler-1.3 before installing Ruby 2.0!
 
@@ -27,7 +24,7 @@ RubyGems and Bundler are all available.
 If you, like me, are installing this through `ruby-build`, be aware that
 **ruby-build will not install or update Bundler for you!**
 
-This is somewhat problematic because Bundler (if it's installed) *has* to
+This is somewhat problematic because Bundler (if it's installed) _has_ to
 be version 1.3 or above for RubyGems to install. Otherwise, you'll get this
 when you try to run any RubyGem (after installing through Bundler which actually
 works fine)..
@@ -39,7 +36,7 @@ Go try and install Bundler. Don't worry, I'll wait:
     ♬  gem install bundler --pre
     Fetching: bundler-1.3.0.gem (100%)
     ERROR:  While executing gem ... (Gem::Package::PathError)
-        installing into parent path /Users/necromancer/Sites/api.elocal.com/vendor/gems/gems/bundler-1.3.0/.gitignore of vendor/gems/gems/bundler-1.3.0 is not allowed 
+        installing into parent path /Users/necromancer/Sites/api.elocal.com/vendor/gems/gems/bundler-1.3.0/.gitignore of vendor/gems/gems/bundler-1.3.0 is not allowed
 
 This will now happen for every RubyGem you try to install.
 

@@ -1,14 +1,14 @@
 ---
 layout: post
-title: 'pv: a shell interface for pivotal tracker'
+title: "pv: a shell interface for pivotal tracker"
 category: code
 date: 2013-03-29
 tags:
-- pivotal tracker
-- bugs
-- ruby
-- work
-- elocal
+  - pivotal tracker
+  - bugs
+  - ruby
+  - work
+  - elocal
 description: |
   At eLocal, we use the lovely Pivotal Tracker to track our
   work progress. It has a really great interface for viewing stories, and
@@ -20,10 +20,7 @@ description: |
   the stage server and is ready for testing, while Finished just means
   that I've pushed the code to master branch and it can be deployed at
   any time.
-
 ---
-
-
 
 At [eLocal][el], we use the lovely [Pivotal Tracker][pt] to track our
 work progress. It has a really great interface for viewing stories, and
@@ -33,7 +30,7 @@ to "predict" future iterations by using the velocity and "points" system
 which are also arbitrary, but we use them for very specific
 purposes...for example, **Delivered** means the story has been placed on
 the stage server and is ready for testing, while **Finished** just means
-that I've pushed the code to master branch and it *can* be deployed at
+that I've pushed the code to master branch and it _can_ be deployed at
 any time.
 
 But enough about our workflow, I want to talk about a tool I wrote that
@@ -45,7 +42,7 @@ format, totally within the shell...
 [pv][pv] is a command-line tool that views and edits the Pivotal Tracker
 stories that have been assigned to you in the **My Work** pane. It's
 scoped to just your work, and `pv` was definitely designed from the
-perspective of developers *working on* a project, not project managers
+perspective of developers _working on_ a project, not project managers
 who are managing those developers. My opinion is that Pivotal Tracker's
 UI was designed primarily for people like that, so this shell tool is
 simply a different way of seeing that, geared more towards developers
@@ -80,7 +77,7 @@ environment.
 You can also modify stories using `pv`. When I combine it with
 [git-tracker][gt], I don't really have to ever visit
 [pivotaltracker.com][pt] at any point during my work day, unless I just
-*want* a better interface, or I need to click links (better to do that
+_want_ a better interface, or I need to click links (better to do that
 in a web browser than in the shell, IMO). If you want to modify a
 story's state outside of a commit message, pass the state and story ID
 to `pv` like so:

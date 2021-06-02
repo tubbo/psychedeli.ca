@@ -1,13 +1,13 @@
 ---
 layout: post
-title: 'ember and electron: a winning combination'
+title: "ember and electron: a winning combination"
 category: code
 date: 2015-08-04
 tags:
-- ember
-- electron
-- javascript
-- desktop
+  - ember
+  - electron
+  - javascript
+  - desktop
 description: "
   I've been playing around with the Electron framework, formerly known
   as Atom Shell. It's a tool based on Chromium and io.js that allows you
@@ -19,10 +19,7 @@ description: "
   have the time or resources to find native OS X/Windows developers in
   which to help me complete it. So I turned to the tools I know best:
   JavaScript and, especially, Ember.js."
-
 ---
-
-
 
 I've been playing around with the [Electron][electron] framework,
 formerly known as **Atom Shell**. It's a tool based on
@@ -48,11 +45,10 @@ distributed.
 
 ## what ember-electron gets right
 
-The ember-electron example app brought me a *long* way from where I
+The ember-electron example app brought me a _long_ way from where I
 originally was, having zero idea on where to begin. Since Electron can
 load URLs as well as local files, the ember-electron repo was able to
-have the local Electron development app connect to an instance of `ember
-server` by waiting for Ember to start and then booting Electron. It did
+have the local Electron development app connect to an instance of `ember server` by waiting for Ember to start and then booting Electron. It did
 this in a very interesting way...here's the shell command that was used
 as the "electron" job in `node-foreman`:
 

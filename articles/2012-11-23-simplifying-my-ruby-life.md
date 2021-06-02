@@ -4,17 +4,14 @@ title: simplifying my ruby life
 date: 2012-11-23
 category: code
 tags:
-- ruby
-- bundler
-- rvm
+  - ruby
+  - bundler
+  - rvm
 description: |
   Ruby is all about simplicity. Make simple things simple, right? So how come we have to deal with all
   this complexity when we run Ruby? This is how I made my life slightly easier and got some really
   sweet benefits as a result.
-
 ---
-
-
 
 Ruby is all about simplicity. Make simple things simple, right? So how come we have to deal with all
 this complexity when we run Ruby? This is how I made my life slightly easier and got some really
@@ -43,7 +40,7 @@ shells take an exorbitantly long time to open, even when my ZSH configs are opti
 The real bottleneck is, and always has been, RVM.
 
 As [Ruby 1.8 began to sunset](https://www.engineyard.com/blog/2012/ruby-1-8-7-and-ree-end-of-life/),
- I felt as though my time with RVM was coming to an end. I hesitated for a moment, then typed
+I felt as though my time with RVM was coming to an end. I hesitated for a moment, then typed
 `rm -rf ~/.rvm` into iTerm and hit enter.
 
 I didn't see the prompt again for another 20 minutes.

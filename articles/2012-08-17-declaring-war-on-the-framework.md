@@ -3,7 +3,7 @@ layout: post
 title: declaring war on the framework
 category: code
 date: 2012-08-17
-tags: 
+tags:
 published: true
 description: |
   Most of my time at my current job has been spent refactoring our
@@ -16,10 +16,7 @@ description: |
   the genius idea of separating out the entire model structure into a gem,
   which further complicated the matter, leading to strange errors,
   security flaws, and flat-out unimplemented garbage code.
-
 ---
-
-
 
 Most of my time at my current job has been spent refactoring our
 affiliates API. When I started, it was a series of disorganized Rails
@@ -35,8 +32,8 @@ security flaws, and flat-out unimplemented garbage code.
 ## The Pre-Game Show
 
 Before I began reworking the API, I was told to completely rewrite the
-email parser engine (from scratch, [don't ever fucking do this][joel]). 
-It was originally written in C++, but I had to implement in Ruby ostensibly 
+email parser engine (from scratch, [don't ever fucking do this][joel]).
+It was originally written in C++, but I had to implement in Ruby ostensibly
 so other developers could help out with adding features down the road.
 This never happened, of course, because every time there needed to be something
 added or a bug needed to be fixed, nobody wanted to tackle the problem
@@ -76,7 +73,7 @@ managing the operations of the band as well as conducting performances
 and sometimes cueing parts to be played. Sometimes, there's a guy in the
 band who simply doesn't "get it". He can't seem to fit himself in to the
 sound of the whole band, and blend the sound of his instrument with that
-of everyone else. And by the way, for the P.C. crowd...I am purposely not 
+of everyone else. And by the way, for the P.C. crowd...I am purposely not
 representing the female gender, because I rarely meet women who do this.
 I'm not sure if that's because there are typically more men than women
 who play jazz instruments, which is the kind of musician I recruit for
@@ -92,7 +89,7 @@ hearing of how he's been behaving. In bands which don't cycle through
 performers, this is an even bigger problem because it is much more
 expensive to fire someone and replace them than it is to mend a
 relationship between two band members, from a logistical standpoint. In
-other words, it's a lot less work on *my* part if the entire band works
+other words, it's a lot less work on _my_ part if the entire band works
 with "that guy" to help him blend his sound in. But sometimes, it just
 doesn't work.
 
@@ -111,7 +108,7 @@ only reason I was introduced to the project in the first place, and it
 turns out that an email parser is **really, really easy** to write in
 Ruby. So whatever bullshit was spewing out of his mouth was just that,
 and most likely his real motivation for writing it in C++ is just
-"because he could". We must remember, however, that **just because you can, 
+"because he could". We must remember, however, that **just because you can,
 doesn't mean you should**. In this case, this motivator for his
 decision-making cost the company thousands of dollars and backtracked
 our entire development effort a bit, because I can't work on the main
@@ -164,8 +161,8 @@ developer in question is not aware of or doesn't understand how to work
 with a team. Perhaps he didn't feel comfortable with his team, or there
 were other reasons why he chose to code this way, but in any case they
 are causing massive problems for me. Because it would take far too
-much time to go through this code and refactor its potential issues, 
-I can only hope that it continues to work as we continue development on 
+much time to go through this code and refactor its potential issues,
+I can only hope that it continues to work as we continue development on
 the API.
 
 Before I [touched the code][dtmc], the JavaScript that controlled this
@@ -180,8 +177,8 @@ take advantage of the nice server-side view layer stuff like Haml,
 helper methods, and Rails' ActionView module. Working in Rails is just
 depressing if you can't use this shit.
 
-Oh, did I mention that *all* of the static assets previously used in this 
-widget were in **app/views/script**, and they were all ERb so he could 
+Oh, did I mention that _all_ of the static assets previously used in this
+widget were in **app/views/script**, and they were all ERb so he could
 interpolate `<%= request.host %>` into the code. Yup.
 
 ## Reversing This Hell
@@ -190,7 +187,7 @@ So as I continued to toil on the API, I decided that my ultimate goal on
 this project is to refactor it so the entire team could simply jump in
 and begin working. In order to do this, a few things had to happen:
 
-1. Everything needs to be combined into a single Rails app. 
+1. Everything needs to be combined into a single Rails app.
 2. Data from the MongoDB collection(s) that formerly powered the API
    must be converted to PostgreSQL, with preserved relationships.
 3. Must integrate with Jenkins, our CI server, and our other
@@ -222,7 +219,7 @@ the temporary table schema, since it also holds crucial database field
     count = 270171
     model_name = "?????"
 
-    # Create temporary tables of Mongo data 
+    # Create temporary tables of Mongo data
     data.split("\n").each do |line|
       # print the last model on each new model name encounter
       if !!line.match(/\.rb/)
@@ -273,8 +270,7 @@ you have in a certain directory. It will then generate Rails models for
 each of those MongoMapper models. In short, these two loops are what
 translates MongoMapper class information into a database schema and
 model structure. Doing this requires that your MongoMapper models are in
-a different directory from app/models, so it may be a good idea to `mv
-app/models vendor/models && mkdir -p app/models` before running this
+a different directory from app/models, so it may be a good idea to `mv app/models vendor/models && mkdir -p app/models` before running this
 script. At eLocal, we ran this in a Rake task.
 
 ### The Data Translation
@@ -283,7 +279,7 @@ I'll spare you guys the entire code for the "real import" task, because
 it is rather long and tedious. We ran a SQL query that `INSERT`ed into
 the "app table" (that is, the table generated by the model which we will
 be using in the application) the contents of our temporary tables, which
-are prefixed with "tmp_". It turns the `_id` column on all tables into
+are prefixed with "tmp\_". It turns the `_id` column on all tables into
 `bson_id`, and sets up the reference columns for other models by their
 relational ID. It is important to run these scripts in a specific order,
 from the least amount (or 0) of associations to the model dependent on
@@ -292,10 +288,10 @@ them all in a Rake task.
 
 Here's the formula for all of the SQL queries which performed this task:
 
-    TRUNCATE models; 
+    TRUNCATE models;
     INSERT INTO models(name, relationship_id, bson_id, created_at, updated_at)
-      SELECT name, tmp_models.name, relation_models.id, _id, COALESCE(tmp_models.created_at, NOW()), COALESCE(tmp_models.updated_at, NOW()) 
-        FROM tmp_models 
+      SELECT name, tmp_models.name, relation_models.id, _id, COALESCE(tmp_models.created_at, NOW()), COALESCE(tmp_models.updated_at, NOW())
+        FROM tmp_models
         LEFT JOIN relation_models ON relation_models.bson_id = tmp_models.relationship_id;
 
 When that task is written, the database will be magically populated with
@@ -307,7 +303,7 @@ Rails app.
 When these Rake tasks are run side by side, they do a complete
 conversion of the MongoDB collection into a Rails-ready SQL database.
 Because the API will be live when we're migrating to the new server, we
-need to make sure we're dropping as little data as possible. 
+need to make sure we're dropping as little data as possible.
 
 ## Migrating a Live API
 
@@ -343,7 +339,7 @@ fatal failure situations). Not only that, but the load balancer allows
 us to experiment with horizontal scaling of our EC2 infrastructure.
 
 So in order to deploy the API, I set up its infrastructure to use a
-single load balancer and API server. Since we don't get *that* much API
+single load balancer and API server. Since we don't get _that_ much API
 traffic right now, I kept it simple and only put one EC2 instance on the
 load balancer. With the load balancer and Chef EC2 instance in place, it
 was time to test the API. To do this, I used `/etc/hosts` to "trick" my
@@ -360,7 +356,7 @@ downtime or difference when posting their leads to our backend.
 
 Losing data is never a good thing. So when moving the API over, we
 wanted to make sure that ideally 0% of the data gets lost. That's
-(probably) not going to happen, but it's still a good idea to shoot for 
+(probably) not going to happen, but it's still a good idea to shoot for
 that. Our data loss was pretty much negligable because of our deployment
 speed and the fact that everything was "set in place" before the actual
 movement happened, so basically all we needed to do was to "flip a
@@ -410,7 +406,6 @@ NOT to do with a Rails app. Namely...
   indispensable tool for managing server configuration.
 - There are companies that actually sell C++ libraries. Libraries! And
   what's worse, **there are companies that BUY these libraries!**
-
 
 [joel]: http://www.joelonsoftware.com/articles/fog0000000069.html
 [wb]: http://thewonderbars.com

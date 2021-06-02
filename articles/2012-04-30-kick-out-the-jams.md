@@ -4,21 +4,18 @@ title: kick out the jams, motherfuckers
 category: code
 date: 2012-04-30
 tags:
-- twitter
-- bootstrap
-- css
-- sass
-- sprockets
+  - twitter
+  - bootstrap
+  - css
+  - sass
+  - sprockets
 description: |
   Well, I finally broke down and integrated Twitter Bootstrap with the existing UI of
   my blog. To be fair, it DEFINITELY needed some work, and I just didn't have the time to get into the existing Sass SCSS framework and figure everything out. But as Bootstrap turned 2.0, I found myself longing for a responsive UI (so I wouldn't have to "deal with" mobile), a standard reset, great typography defaults, and nice buttons/form elements to play with should I need them. The answer was simple. I needed Bootstrap.
-
 ---
 
-
-
 Well, I finally broke down and integrated [Twitter Bootstrap][twbs] with the existing UI of
-my blog. To be fair, it DEFINITELY needed some work, and I just didn't have the time to get into the existing [Sass SCSS][sass] framework and figure everything out. But as Bootstrap [turned 2.0][twbs2], I found myself longing for a responsive UI (so I wouldn't have to "deal with" mobile), a standard reset, great typography defaults, and nice buttons/form elements to play with should I need them. The answer was simple. I *needed* Bootstrap.
+my blog. To be fair, it DEFINITELY needed some work, and I just didn't have the time to get into the existing [Sass SCSS][sass] framework and figure everything out. But as Bootstrap [turned 2.0][twbs2], I found myself longing for a responsive UI (so I wouldn't have to "deal with" mobile), a standard reset, great typography defaults, and nice buttons/form elements to play with should I need them. The answer was simple. I _needed_ Bootstrap.
 
 Bootstrap is written in the [LESS][less] framework, which kinda sucks because I prefer SCSS since I work with [Rails apps all day][rails]. Thankfully, someone made [a gem][bss] that ports the Bootstrap framework over to Sass for easy modification. Now, if I want to modify the very variables and mixins that power the framework, I can do so. That's really cool.
 

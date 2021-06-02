@@ -4,9 +4,9 @@ title: how to bang...like a boss
 category: code
 date: 2013-02-11
 tags:
-- ruby
-- bang
-- conventions
+  - ruby
+  - bang
+  - conventions
 description: |
   In the Ruby programming language, there exists two characters you are
   only permitted to use when naming a method: ? and !. These
@@ -20,10 +20,7 @@ description: |
   about to execute some actions which may fail, or are connecting to an
   outside resource (such as an API or our mothership site) In either case,
   the "!" dictates that our app's control flow should stop.
-
 ---
-
-
 
 In the Ruby programming language, there exists two characters you are
 only permitted to use when naming a method: **?** and **!**. These

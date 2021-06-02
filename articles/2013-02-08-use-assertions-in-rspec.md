@@ -4,19 +4,16 @@ title: use assertions in rspec
 category: code
 date: 2013-02-11
 tags:
-- rspec
-- ruby
-- testing
-- test_unit
-- bdd
-- tdd
-description: 'tl;dr -- you can do MiniTest::Assertions inside RSpec examples.
+  - rspec
+  - ruby
+  - testing
+  - test_unit
+  - bdd
+  - tdd
+description: "tl;dr -- you can do MiniTest::Assertions inside RSpec examples.
 
-  '
-
+  "
 ---
-
-
 
 # tl;dr -- you can do MiniTest::Assertions inside RSpec examples.
 
@@ -63,7 +60,7 @@ to necessarily see which tests fails immediately in real-time.
 Tools like [vim-vroom][vroom] were built for RSpec. [Gary Bernhardt's vimrc][gbv]
 is designed for RSpec and works best when you're not constantly switching between
 Minitest and RSpec. It's more reliable to run single tests and single examples
-with RSpec, because you don't need a special shell alias or *not* use things
+with RSpec, because you don't need a special shell alias or _not_ use things
 like Turn which muck with the actual name of the `test_method` you developed.
 
 ## have your cake and eat it too

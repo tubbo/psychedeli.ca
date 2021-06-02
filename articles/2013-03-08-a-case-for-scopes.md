@@ -4,17 +4,14 @@ title: a case for scopes
 category: code
 date: 2013-03-08
 tags:
-- rails
-- ruby
-- active_record
+  - rails
+  - ruby
+  - active_record
 description: |
   There has been a lot of hate towards scopes recently. I'm here
   to tell you that scopes aren't all bad, and they can be used to create
   some astonishingly elegant model definitions.
-
 ---
-
-
 
 There has been a lot of hate towards [scopes][ars] recently. I'm here
 to tell you that scopes aren't all bad, and they can be used to create
@@ -129,13 +126,13 @@ to form larger queries when you need them, and so far nothing functionally
 has changed with this example. But my point here is I've added about 9
 lines and that really hasn't improved the readability of my model.
 
-In fact, I argue that it has *decreased* the readability in this case.
+In fact, I argue that it has _decreased_ the readability in this case.
 When I had my scopes set up, it was 3 lines and with the exception of
 the lambda surrounding each query clause, there was not a single bit
 of "baroque" code (e.g., syntax that has nothing to do with readability,
 but is necessary for the compiler to understand what's going on). Given
 you're a reader of the source code, as most professional Ruby developers
-tend to be, you'd see the scopes clearly laid out and *most* likely if
+tend to be, you'd see the scopes clearly laid out and _most_ likely if
 you needed them, they'd be easy to understand. The documentation for
 the scope sort-of "writes itself", in this case, so there's really no
 need to over-document those class methods which hopefully won't be used
@@ -151,7 +148,7 @@ So just to wrap it up, I feel confident that those 3 lines of `scope`
 macros are just as effective as writing the methods as actual class methods,
 and furthermore, increases the readability of the entire class definition.
 This does come at the expense of lacking documentation for methods that
-are public and *do* exist on your class (breaking some rule I'm sure), but
+are public and _do_ exist on your class (breaking some rule I'm sure), but
 my arguement is that this is not always needed.
 
 Use your own judgement. If you feel like your scope is getting too complex,

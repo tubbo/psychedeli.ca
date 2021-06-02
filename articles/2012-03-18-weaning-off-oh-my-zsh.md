@@ -4,26 +4,24 @@ title: weaning off oh my zsh
 category: code
 date: 2012-03-18
 tags:
-- shell
-- zsh
-- git
-- gitflow
-- productivity
-description: 'Since December 2011, I''ve been working with ZSH, an alternate shell
+  - shell
+  - zsh
+  - git
+  - gitflow
+  - productivity
+description:
+  "Since December 2011, I've been working with ZSH, an alternate shell
   for *nix-based operating systems which has conventions similar to BASH, ZSH adds
   a number of more modern features to the standard shell fare, such as more customization
-  options for your prompt and extendable autocompletion. To get started on it, I''ve
+  options for your prompt and extendable autocompletion. To get started on it, I've
   employed the lovely Oh My ZSH framework which helps to organize your ZSH settings
   (.zshrc) and use functionality developed by others so you can explore the wonderful
   possibilities of this awesome shell.
 
-  '
-
+  "
 ---
 
-
-
-Since December 2011, I've been working with [ZSH][zsh], an alternate shell for *nix-based operating systems which has conventions similar to [BASH][bash], ZSH adds a number of more modern features to the standard shell fare, such as more customization options for your prompt and extendable autocompletion. To get started on it, I've employed the lovely [Oh My ZSH][omz] framework which helps to organize your ZSH settings (`.zshrc`) and use functionality developed by others so you can explore the wonderful possibilities of this awesome shell.
+Since December 2011, I've been working with [ZSH][zsh], an alternate shell for \*nix-based operating systems which has conventions similar to [BASH][bash], ZSH adds a number of more modern features to the standard shell fare, such as more customization options for your prompt and extendable autocompletion. To get started on it, I've employed the lovely [Oh My ZSH][omz] framework which helps to organize your ZSH settings (`.zshrc`) and use functionality developed by others so you can explore the wonderful possibilities of this awesome shell.
 
 Oh My ZSH was designed for new users, and is meant to be replaced at some point in the future by a `.zshrc` that handles everything. This was also my eventual goal, but after getting more comfortable with Oh My ZSH, I began realizing that I would be missing out on a number of enhancements it gives my shell experience:
 
@@ -67,4 +65,4 @@ This will replace the symlink with the file it's linked to and remove it from th
 [flow]: https://github.com/nvie/gitflow
 [nvie]: http://nvie.com/posts/a-successful-git-branching-model/
 [fork]: http://github.com/tubbo/oh-my-zsh
-[DOTS]: http://github.com/tubbo/dots
+[dots]: http://github.com/tubbo/dots

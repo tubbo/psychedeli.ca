@@ -4,11 +4,11 @@ title: writing jquery plugins with coffeescript
 category: code
 date: 2013-03-25
 tags:
-- coffeescript
-- javascript
-- jquery
-- sumatra
-- rails
+  - coffeescript
+  - javascript
+  - jquery
+  - sumatra
+  - rails
 description: |
   At the job, we're constantly trying to improve the UX of
   eLocal.com by making the site behave harder, better, faster,
@@ -21,10 +21,7 @@ description: |
   from an in-house CRM to an advanced billing system (complete with
   recurring charges and invoicing), as well as basic control of our paying
   customers' ZIP code ads and lead dissemination.
-
 ---
-
-
 
 At [the job][el], we're constantly trying to improve the UX of
 **eLocal.com** by making the site behave [harder, better, faster,
@@ -78,7 +75,7 @@ system.
 
 But once plugins become complected to a further degree than this, the
 functional model employed by the previous example begins to break down.
-Having a lot of functions in your scope (that's *any* scope, not just
+Having a lot of functions in your scope (that's _any_ scope, not just
 the global one) in JavaScript makes your code harder to read, and
 eventually harder to debug. It is at this point when jQuery is no longer
 enough to write effective, efficient and most of all easy to debug
@@ -113,7 +110,7 @@ class UndoFieldsFor
     @item = @element.closest(@options.item)
     @initialize()
 
-  # Bind a removal event onClick 
+  # Bind a removal event onClick
   initialize: ->
     @item.find('input[type=checkbox]').hide()
     @element.on 'click', @removeItem
@@ -153,7 +150,7 @@ fired.
 
 ## sumatra tastes exactly how it smells...delicious
 
-You can already see a *lot* of boilerplate going on in the above
+You can already see a _lot_ of boilerplate going on in the above
 CoffeeScript plugin example. For starters, I always have to do that
 little code on line 1 which sets up the jQuery plugin and tells it to
 instantiate a helper class every time. Also, because `UndoFieldsFor` is
@@ -258,8 +255,7 @@ constructor. **It is bad practice to override SumatraPlugin's
 constructor**, since `initialize()` provides everything you need to
 get the class support up and running. Here, we're just caching some
 "instance" variables to some other elements that UndoFieldsFor needs to
-know about, like the `<form>` surrounding all of this, and the `<input
-type="submit">` button that is used to submit the form. Additionally, we
+know about, like the `<form>` surrounding all of this, and the `<input type="submit">` button that is used to submit the form. Additionally, we
 have the ability to set the item class in case of a conflict, so we also
 cache the item property here and delete its corresponding checkbox.
 
@@ -287,10 +283,10 @@ private methods, `this._disableSubmission()` and
 a preceding `_` in the method name. **There are no private methods in
 JavaScript**, so this convention is how we solve for that. Note that the
 distinction between public and private is purely semantic, and has no
-bearing on the logic of the code. They're to show *you* that the
+bearing on the logic of the code. They're to show _you_ that the
 methods were not written to be called externally on this object.
 
-Let's take a look at **_disableSubmission()**:
+Let's take a look at **\_disableSubmission()**:
 
 ```coffeescript
     _disableSubmission: ->
@@ -325,7 +321,7 @@ place. Realistically, the most complex part is the `sumatra()` function,
 which uses a bit of meta-programming to get the job done and allow you
 to choose any class name as your service object. Other than that, I'm
 just giving you an "interface" prototype object to build your plugin off
-of, with *very* limited resources. This keeps the codebase light and
+of, with _very_ limited resources. This keeps the codebase light and
 easy to read, and lets you take care of the important things.
 
 ## when you SHOULDN'T use sumatra

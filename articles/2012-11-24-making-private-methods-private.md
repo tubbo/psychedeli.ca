@@ -3,8 +3,8 @@ layout: post
 title: making private methods private
 date: 2012-11-24
 tags:
-- ruby
-- experiment
+  - ruby
+  - experiment
 category: code
 description: |
   So it's a well-known Rubyism that you can actually circumvent private and
@@ -12,10 +12,7 @@ description: |
   method to access them. I wanted to see if it was possible to rewrite
   send() on a particular class to throw an exception if the method attempting
   to be accessed was a private method on the class.
-
 ---
-
-
 
 So it's a well-known Rubyism that you can actually circumvent private and
 protected restrictions on instance methods if you simply use the `send()`
