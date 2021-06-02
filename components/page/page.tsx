@@ -15,6 +15,7 @@ export const Main = styled("main", {
 
 export const Title = styled("h1", {
   fontSize: "$fontSizes$1",
+  fontFamily: "$fonts$heading",
 });
 
 export const Page: FC<PageProps> = ({ title, children }) => {
@@ -26,9 +27,10 @@ export const Page: FC<PageProps> = ({ title, children }) => {
 
   global({
     body: {
-      color: "$hiContrast",
-      background: "$loContrast",
+      color: "$colors$base3",
+      background: "$colors$base03",
       fontSize: "$fontSizes$base",
+      fontFamily: "$fonts$system",
     },
   })();
 
@@ -36,6 +38,11 @@ export const Page: FC<PageProps> = ({ title, children }) => {
     <>
       <Head>
         <title>{pageTitle}</title>
+        <link rel="preconnect" href="https://fonts.gstatic.com" />
+        <link
+          href="https://fonts.googleapis.com/css2?family=Fira+Sans&family=Ubuntu:wght@500&display=swap"
+          rel="stylesheet"
+        />
       </Head>
       {title && <Title>{title}</Title>}
       <Main className={theme.className}>{children}</Main>

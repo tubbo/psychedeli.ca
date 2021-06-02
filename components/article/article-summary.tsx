@@ -7,8 +7,16 @@ export type ArticleSummaryProps = {
   article: Article;
 };
 
-export const Summary = styled("summary", {
+const Summary = styled("summary", {
   listStyleType: "none",
+});
+
+const Title = styled("h2", {
+  fontFamily: "$fonts$heading",
+});
+
+const Footer = styled("footer", {
+  fontSize: "$fontSizes$0",
 });
 
 export function ArticleSummary({ article }: ArticleSummaryProps) {
@@ -21,7 +29,7 @@ export function ArticleSummary({ article }: ArticleSummaryProps) {
   return (
     <Summary>
       <header>
-        <h2>{article.title}</h2>
+        <Title>{article.title}</Title>
       </header>
       <main>
         <p>{article.description}</p>
@@ -29,10 +37,10 @@ export function ArticleSummary({ article }: ArticleSummaryProps) {
           <Link href={path}>Read more...</Link>
         </p>
       </main>
-      <footer>
+      <Footer>
         Posted on <ArticleDate date={article.date} /> in{" "}
-        <ArticleCategory category={article.category} />
-      </footer>
+        <ArticleCategory category={article.category} />.
+      </Footer>
     </Summary>
   );
 }
