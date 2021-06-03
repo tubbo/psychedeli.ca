@@ -22,7 +22,7 @@ export default function ArticlePage({ article }: ArticlePageProps) {
     <Article>
       <Head>
         <title key="title">
-          {article.title} - {process.env.NEXT_PUBLIC_APP_TITLE}
+          {article.title} - {process.env.NEXT_PUBLIC_TITLE}
         </title>
         <meta key="og:title" property="og:title" content={article.title} />
         <meta property="og:description" content={article.description} />

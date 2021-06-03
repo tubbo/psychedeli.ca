@@ -99,9 +99,13 @@ export async function findArticle(
 export const ARTICLES_PATH = path.join(process.cwd(), "articles", "*.md");
 
 export async function findLatestArticles(): Promise<Article[]> {
-  return await Promise.all(
-    glob(ARTICLES_PATH).sort(byDate).slice(0, 6).map(parseArticle)
-  );
+  const all = await findArticles();
+
+  return all.slice(0, 6);
+}
+
+export async function findArticles(): Promise<Article[]> {
+  return await Promise.all(glob(ARTICLES_PATH).sort(byDate).map(parseArticle));
 }
 
 export function findArticlePaths(): string[] {
@@ -114,10 +118,12 @@ export type Category = {
 };
 
 export async function findCategory(name: string): Promise<Category> {
-  const data = await Promise.all(
-    glob(ARTICLES_PATH).sort(byDate).map(parseArticle)
-  );
+  const data = await findArticles();
   const articles = data.filter((article) => article.category === name);
 
   return { name, articles };
+}
+
+export async function findCategories(): Promise<Category[]> {
+  const articles = await findArticles();
 }

@@ -27,7 +27,7 @@ export default function Home({ articles }: HomePageProps) {
         <meta
           key="og:title"
           property="og:title"
-          content={process.env.NEXT_PUBLIC_APP_TITLE}
+          content={process.env.NEXT_PUBLIC_TITLE}
         />
         <meta key="og:type" property="og:type" content="website" />
         <meta

@@ -13,7 +13,7 @@ const CategoryPage: FC<CategoryPageProps> = ({ category }) => (
   <Main>
     <Head>
       <title>
-        {category.name} - {process.env.NEXT_PUBLIC_APP_TITLE}
+        {category.name} - {process.env.NEXT_PUBLIC_TITLE}
       </title>
     </Head>
     {category.articles.map((article, key) => (
