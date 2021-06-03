@@ -1,5 +1,4 @@
 import { createCss } from "@stitches/react";
-import "normalize.css/normalize.css";
 
 export const { styled, css, global, keyframes, getCssString, theme } =
   createCss({
@@ -37,8 +36,9 @@ export const { styled, css, global, keyframes, getCssString, theme } =
         10: "2em",
       },
       fonts: {
-        system: "'Fira Sans', sans-serif",
-        heading: "'Ubuntu', sans-serif",
+        system: "'Fira Sans', Helvetica, sans-serif",
+        heading: "'Ubuntu', Verdana, sans-serif",
+        logo: "'Rum Raisin', Arial, sans-serif",
       },
     },
     media: {},
@@ -48,7 +48,7 @@ export const { styled, css, global, keyframes, getCssString, theme } =
     themeMap: {},
   });
 
-export const darkTheme = theme({
+export const darkTheme = theme("dark", {
   colors: {
     base03: "#002b36",
     base02: "#073642",
@@ -61,15 +61,15 @@ export const darkTheme = theme({
   },
 });
 
-export const lightTheme = theme({
+export const lightTheme = theme("light", {
   colors: {
-    base0: "#002b36",
-    base1: "#073642",
-    base2: "#586e75",
-    base3: "#657b83",
-    base03: "#839496",
-    base02: "#93a1a1",
-    base01: "#eee8d5",
-    base00: "#fdf6e3",
+    base3: "#002b36",
+    base2: "#073642",
+    base1: "#586e75",
+    base0: "#657b83",
+    base00: "#839496",
+    base01: "#93a1a1",
+    base02: "#eee8d5",
+    base03: "#fdf6e3",
   },
 });

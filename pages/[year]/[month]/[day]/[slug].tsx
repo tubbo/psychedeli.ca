@@ -4,6 +4,7 @@ import {
   findArticle,
   ArticleParams,
   findArticlePaths,
+  urlForArticle,
 } from "articles";
 import {
   Article,
@@ -13,29 +14,43 @@ import {
   ArticleDate,
   ArticleTitle,
 } from "components/article";
-import { Page } from "components/page";
+import Head from "next/head";
 
 export type ArticlePageProps = { article: ArticleType };
 
 export default function ArticlePage({ article }: ArticlePageProps) {
   return (
-    <Page>
-      <Article>
-        <ArticleHeader>
-          <ArticleTitle>{article.title}</ArticleTitle>
-        </ArticleHeader>
-        <ArticleContent body={article.body} />
-        <ArticleFooter>
-          <ArticleDate date={article.date} />
-        </ArticleFooter>
-      </Article>
-    </Page>
+    <Article>
+      <Head>
+        <title key="title">
+          {article.title} - {process.env.NEXT_PUBLIC_APP_TITLE}
+        </title>
+        <meta key="og:title" property="og:title" content={article.title} />
+        <meta key="og:type" property="og:type" content="website" />
+        <meta property="article:published_time" content={article.date} />
+        <meta property="article:author" content="Tom Scott" />
+        <meta property="article:section" content={article.category} />
+        {article.tags.map((tag, key) => (
+          <meta key={key} property="article:tag" content={tag} />
+        ))}
+        <meta key="og:url" property="og:url" content={urlForArticle(article)} />
+      </Head>
+      <ArticleHeader>
+        <ArticleTitle>{article.title}</ArticleTitle>
+      </ArticleHeader>
+      <ArticleContent body={article.body} />
+      <ArticleFooter>
+        <ArticleDate date={article.date} />
+      </ArticleFooter>
+    </Article>
   );
 }
 
 export const getStaticProps: GetStaticProps = async ({ params }) => {
   try {
     const article = await findArticle(params as ArticleParams);
+
+    if (!article) throw new Error("Article not found");
 
     return { props: { article } };
   } catch (error) {

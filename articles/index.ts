@@ -2,10 +2,11 @@ import frontMatter from "front-matter";
 import { promises as fs } from "fs";
 import path from "path";
 import { sync as glob } from "glob";
-import marked from "marked";
+import removeMarkdown from "remove-markdown";
+import { DateTime } from "luxon";
 
 const parseParams = (filename: string): ArticleParams => {
-  const [year, month, day, ...slugs] = filename.split("-");
+  const [year, month, day, ...slugs] = path.basename(filename).split("-");
   const slug = path.basename(slugs.join("-"), ".md");
 
   return {
@@ -28,9 +29,9 @@ const byDate = (lastFile: string, nextFile: string) => {
   const [next] = dateFrom(nextFile);
 
   if (last > next) {
-    return 1;
-  } else {
     return -1;
+  } else {
+    return 1;
   }
 };
 
@@ -51,19 +52,34 @@ export type Article = {
   slug: string;
 };
 
+export function computeArticlePath(filename: string): string {
+  const { year, month, day, slug } = parseParams(filename);
+
+  return `/${year}/${month}/${day}/${slug}`;
+}
+
+export function urlForArticle(article: Article): string {
+  const url = new URL(process.env.NEXT_PUBLIC_APP_URL || "");
+  const { year, month, day } = DateTime.fromISO(article.date);
+
+  url.pathname = `/${year}/${month}/${day}/${article.slug}`;
+
+  return url.toString();
+}
+
 export async function parseArticle(filepath: string): Promise<Article> {
   const source = await fs.readFile(filepath, "utf-8");
   const {
-    attributes: { title, description, tags, category },
-    body: markdown,
+    attributes: { title, description: descriptionSource, tags, category },
+    body,
   } = frontMatter(source);
-  const body = marked(markdown);
+  const description = removeMarkdown(descriptionSource);
   const [date, slug] = dateFrom(path.basename(filepath));
 
   return {
     title,
     description,
-    tags,
+    tags: tags ?? [],
     category,
     body,
     date: date.toISOString(),
@@ -79,11 +95,12 @@ export async function findArticle(
   try {
     const { year, month, day, slug } = params;
     const filename = `${year}-${month}-${day}-${slug}.md`;
-    const filepath = path.join(__dirname, filename);
+    const filepath = path.join(process.cwd(), "articles", filename);
     const article = await parseArticle(filepath);
 
     return article;
-  } catch (_error) {
+  } catch (error) {
+    console.error(error);
     return;
   }
 }
@@ -97,7 +114,19 @@ export async function findLatestArticles(): Promise<Article[]> {
 }
 
 export function findArticlePaths(): string[] {
-  return glob(ARTICLES_PATH)
-    .map(parseParams)
-    .map(({ year, month, day, slug }) => `/${year}/${month}/${day}/${slug}`);
+  return glob(ARTICLES_PATH).map(computeArticlePath);
+}
+
+export type Category = {
+  name: string;
+  articles: Article[];
+};
+
+export async function findCategory(name: string): Promise<Category> {
+  const data = await Promise.all(
+    glob(ARTICLES_PATH).sort(byDate).map(parseArticle)
+  );
+  const articles = data.filter((article) => article.category === name);
+
+  return { name, articles };
 }

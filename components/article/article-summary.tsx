@@ -21,9 +21,9 @@ const Footer = styled("footer", {
 
 export function ArticleSummary({ article }: ArticleSummaryProps) {
   const date = new Date(article.date);
-  const year = date.getFullYear();
-  const month = date.getMonth();
-  const day = date.getDay();
+  const year = date.getFullYear().toString();
+  const month = (date.getMonth() + 1).toString().padStart(2, "0");
+  const day = date.getDate().toString().padStart(2, "0");
   const path = `/${year}/${month}/${day}/${article.slug}`;
 
   return (
