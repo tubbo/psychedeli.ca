@@ -1,8 +1,8 @@
 import { FC } from "react";
-import { GetStaticProps } from "next";
+import { GetStaticProps, GetStaticPaths } from "next";
 import { findCategory, Category } from "articles";
 import Head from "next/head";
-import { Main } from "components/main";
+import { Main } from "components/page";
 import { ArticleSummary } from "components/article";
 
 export type CategoryPageProps = {
@@ -34,6 +34,13 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
       notFound: true,
     };
   }
+};
+
+export const getStaticPaths: GetStaticPaths = async () => {
+  const articles = await findArticles();
+  const categories = articles.map(({ category }) => category).uniq();
+
+  return { paths, fallback: true };
 };
 
 export default CategoryPage;

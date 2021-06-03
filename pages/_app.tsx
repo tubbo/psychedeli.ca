@@ -6,7 +6,7 @@ import Moon from "icons/moon.svg";
 import { Link } from "components/link";
 import { Page, Header, Navigation, Logo } from "components/page";
 import { Button } from "components/button";
-import { useTheme } from "./theme";
+import { useTheme } from "theme";
 
 import "normalize.css/normalize.css";
 import "highlight.js/styles/a11y-dark.css";
