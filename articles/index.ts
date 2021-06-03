@@ -58,15 +58,6 @@ export function computeArticlePath(filename: string): string {
   return `/${year}/${month}/${day}/${slug}`;
 }
 
-export function urlForArticle(article: Article): string {
-  const url = new URL(process.env.NEXT_PUBLIC_APP_URL || "");
-  const { year, month, day } = DateTime.fromISO(article.date);
-
-  url.pathname = `/${year}/${month}/${day}/${article.slug}`;
-
-  return url.toString();
-}
-
 export async function parseArticle(filepath: string): Promise<Article> {
   const source = await fs.readFile(filepath, "utf-8");
   const {

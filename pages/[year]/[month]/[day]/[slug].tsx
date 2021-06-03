@@ -4,7 +4,6 @@ import {
   findArticle,
   ArticleParams,
   findArticlePaths,
-  urlForArticle,
 } from "articles";
 import {
   Article,
@@ -26,14 +25,14 @@ export default function ArticlePage({ article }: ArticlePageProps) {
           {article.title} - {process.env.NEXT_PUBLIC_APP_TITLE}
         </title>
         <meta key="og:title" property="og:title" content={article.title} />
-        <meta key="og:type" property="og:type" content="website" />
+        <meta property="og:description" content={article.description} />
+        <meta property="og:locale" content="en-US" />
         <meta property="article:published_time" content={article.date} />
         <meta property="article:author" content="Tom Scott" />
         <meta property="article:section" content={article.category} />
         {article.tags.map((tag, key) => (
           <meta key={key} property="article:tag" content={tag} />
         ))}
-        <meta key="og:url" property="og:url" content={urlForArticle(article)} />
       </Head>
       <ArticleHeader>
         <ArticleTitle>{article.title}</ArticleTitle>
