@@ -1,5 +1,5 @@
 import { AppInitialProps } from "next/app";
-import { FunctionComponent } from "react";
+import { FunctionComponent, useEffect } from "react";
 import Head from "next/head";
 import Sun from "icons/sun.svg";
 import Moon from "icons/moon.svg";
@@ -8,6 +8,8 @@ import { Page, Header, Navigation, Logo } from "components/page";
 import { Button } from "components/button";
 import { useTheme } from "theme";
 import { useCurrentURL } from "urls";
+import { global, config } from "stitches.config";
+import ProgressBar from "nextjs-progressbar";
 
 import "normalize.css/normalize.css";
 import "highlight.js/styles/a11y-dark.css";
@@ -20,6 +22,27 @@ export type AppProps = {
 function App({ Component, pageProps }: AppProps) {
   const [theme, toggle] = useTheme();
   const url = useCurrentURL();
+
+  useEffect(() => {
+    const body = document.querySelector("body");
+
+    if (body) {
+      body.className = "";
+      body.classList.add(theme.className);
+    }
+  }, [theme]);
+
+  global({
+    body: {
+      color: "$colors$base3",
+      background: "$colors$base03",
+      transition: "all 0.5s ease-in-out",
+    },
+    ":root": {
+      fontSize: "$fontSizes$base",
+      fontFamily: "$fonts$system",
+    },
+  })();
 
   return (
     <Page className={theme.className}>
@@ -38,6 +61,7 @@ function App({ Component, pageProps }: AppProps) {
         <meta property="og:url" content={url} />
         <meta property="og:site_name" content={process.env.NEXT_PUBLIC_TITLE} />
       </Head>
+      <ProgressBar color={config.theme.colors.green} />
       <Header>
         <Logo>
           <Link decoration="none" href="/">

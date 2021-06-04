@@ -3,7 +3,6 @@ import { promises as fs } from "fs";
 import path from "path";
 import { sync as glob } from "glob";
 import removeMarkdown from "remove-markdown";
-import { DateTime } from "luxon";
 
 const parseParams = (filename: string): ArticleParams => {
   const [year, month, day, ...slugs] = path.basename(filename).split("-");
@@ -104,6 +103,15 @@ export async function findLatestArticles(): Promise<Article[]> {
   return all.slice(0, 6);
 }
 
+export async function findLatestArticlesTagged(
+  name: string
+): Promise<Article[]> {
+  const all = await findArticles();
+  const tagged = all.filter((article) => article.tags.includes(name));
+
+  return tagged.slice(0, 6);
+}
+
 export async function findArticles(): Promise<Article[]> {
   return await Promise.all(glob(ARTICLES_PATH).sort(byDate).map(parseArticle));
 }
@@ -122,8 +130,4 @@ export async function findCategory(name: string): Promise<Category> {
   const articles = data.filter((article) => article.category === name);
 
   return { name, articles };
-}
-
-export async function findCategories(): Promise<Category[]> {
-  const articles = await findArticles();
 }

@@ -1,46 +1,45 @@
-import { FC } from "react";
-import { GetStaticProps, GetStaticPaths } from "next";
-import { findCategory, Category } from "articles";
-import Head from "next/head";
-import { Main } from "components/page";
+import { Category, findCategory, findArticles } from "articles";
 import { ArticleSummary } from "components/article";
+import { GetStaticProps, GetStaticPaths } from "next";
+import Head from "next/head";
+import { Main, Title } from "components/page";
+import uniq from "lodash.uniq";
 
-export type CategoryPageProps = {
+type CategoryPageProps = {
   category: Category;
-};
-
-const CategoryPage: FC<CategoryPageProps> = ({ category }) => (
-  <Main>
-    <Head>
-      <title>
-        {category.name} - {process.env.NEXT_PUBLIC_TITLE}
-      </title>
-    </Head>
-    {category.articles.map((article, key) => (
-      <ArticleSummary key={key} article={article} />
-    ))}
-  </Main>
-);
-
-export const getStaticProps: GetStaticProps = async ({ params }) => {
-  try {
-    const slug = (params?.category as string[])?.join("/");
-    const category = await findCategory(slug);
-
-    return { props: { category } };
-  } catch (error) {
-    return {
-      props: { error },
-      notFound: true,
-    };
-  }
 };
 
 export const getStaticPaths: GetStaticPaths = async () => {
   const articles = await findArticles();
-  const categories = articles.map(({ category }) => category).uniq();
+  const paths = uniq(articles.map(({ category }) => `/${category}`));
 
-  return { paths, fallback: true };
+  return { paths, fallback: false };
 };
 
-export default CategoryPage;
+export const getStaticProps: GetStaticProps = async ({ params }) => {
+  try {
+    const name = params?.category ? params?.category[0] : "";
+    const category = await findCategory(name);
+
+    return { props: { category } };
+  } catch (error) {
+    return { props: { error }, notFound: true };
+  }
+};
+
+export default function CategoryPage({ category }: CategoryPageProps) {
+  return (
+    <Main>
+      <Head>
+        <title key="title">
+          {category.name} {process.env.NEXT_PUBLIC_TITLE}
+        </title>
+        <meta key="og:title" property="og:title" content={category.name} />
+      </Head>
+      <Title>{category.name}</Title>
+      {category.articles.map((article, key) => (
+        <ArticleSummary key={key} article={article} />
+      ))}
+    </Main>
+  );
+}

@@ -32,3 +32,10 @@ yarn-error.log*
 
 # vercel
 .vercel
+
+# generated files
+public/sitemap.xml
+public/robots.txt
+
+# exported site
+out

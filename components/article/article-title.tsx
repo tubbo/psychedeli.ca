@@ -1,6 +1,6 @@
 import { styled } from "stitches.config";
+import { Title } from "components/page";
 
-export const ArticleTitle = styled("h1", {
-  fontFamily: "$fonts$heading",
-  lineHeight: "2em",
+export const ArticleTitle = styled(Title, {
+  borderBottom: "none",
 });

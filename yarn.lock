@@ -1371,6 +1371,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@corex/deepmerge@npm:^2.6.20":
+  version: 2.6.20
+  resolution: "@corex/deepmerge@npm:2.6.20"
+  checksum: c0d01da581ef12c6af7803d030a8a97352f2e45e15249db1296cc0b43a28a27016237b0a9482b7a99a7b65add69d40a450a8babd2835982e73d02919a5562a49
+  languageName: node
+  linkType: hard
+
 "@eslint/eslintrc@npm:^0.4.1":
   version: 0.4.1
   resolution: "@eslint/eslintrc@npm:0.4.1"
@@ -2082,6 +2089,22 @@ __metadata:
   version: 0.0.29
   resolution: "@types/json5@npm:0.0.29"
   checksum: 66e9ac0143ec521522c7bb670301e9836ee886207eeed1aab6d4854a1b19b404ab3a54cd8d449f9b1f13acc357f540be96f8ac2d1e86e301eab52ae0f9a4066f
+  languageName: node
+  linkType: hard
+
+"@types/lodash.uniq@npm:^4":
+  version: 4.5.6
+  resolution: "@types/lodash.uniq@npm:4.5.6"
+  dependencies:
+    "@types/lodash": "*"
+  checksum: 1f25cfeeef528a6da8921098d390dcef9caf1713ed7cdeb32af7da82486e81e62d2d046dd069f3a68981b2e4397b42400a441c5343e2a2de492aea635a1004b9
+  languageName: node
+  linkType: hard
+
+"@types/lodash@npm:*":
+  version: 4.14.170
+  resolution: "@types/lodash@npm:4.14.170"
+  checksum: 5ecc968649e764e3204435ba5125a3645e5e83963069a26b9307791698bf47ed9c2bd0f97488d9537eb4753d4bae596e5fa6187437a5b04bf47aba78fa553d50
   languageName: node
   linkType: hard
 
@@ -6477,6 +6500,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"lodash.uniq@npm:^4.5.0":
+  version: 4.5.0
+  resolution: "lodash.uniq@npm:4.5.0"
+  checksum: 47cb25b59bf40ef3bdf441b7b6cb41d0b95ae0ca576be2c206724dd66041fa8aadab55c1210792671aa0b1c9878d5c0be48927bf4d22f3ed50e5f79d3b2e90b7
+  languageName: node
+  linkType: hard
+
 "lodash@npm:4.x, lodash@npm:^4.17.13, lodash@npm:^4.17.15, lodash@npm:^4.7.0":
   version: 4.17.21
   resolution: "lodash@npm:4.17.21"
@@ -6604,6 +6634,15 @@ __metadata:
   dependencies:
     tmpl: 1.0.x
   checksum: 582016a5e8c56c1101e5fd95ea0ed08e30e5c4fda27e00d1399f75d46bd55fc5475a23089175b61dada21f6a6058886fd00f5985bbe112b943bb0bc833b4ea4d
+  languageName: node
+  linkType: hard
+
+"matcher@npm:^4.0.0":
+  version: 4.0.0
+  resolution: "matcher@npm:4.0.0"
+  dependencies:
+    escape-string-regexp: ^4.0.0
+  checksum: 457f90baba61bef6210978422d8581dc1a08b032565f208abf3db9b063367bd9750f664c71fcc6c262b3b4201aa5c3aebb4c63c40341d92d65ff14ba2e607271
   languageName: node
   linkType: hard
 
@@ -6956,6 +6995,21 @@ __metadata:
   languageName: node
   linkType: hard
 
+"next-sitemap@npm:^1.6.102":
+  version: 1.6.102
+  resolution: "next-sitemap@npm:1.6.102"
+  dependencies:
+    "@corex/deepmerge": ^2.6.20
+    matcher: ^4.0.0
+    minimist: ^1.2.5
+  peerDependencies:
+    next: "*"
+  bin:
+    next-sitemap: bin/next-sitemap
+  checksum: 3a4cb3c20d20800c030bf5ed4f76089ff13cd52607163cd0368ac9305f2e39e3af2a2f512511d6d9d44708afe4b2252c483cbfb83d0841bbee529103e3e59cd4
+  languageName: node
+  linkType: hard
+
 "next@npm:10.2.3":
   version: 10.2.3
   resolution: "next@npm:10.2.3"
@@ -7026,6 +7080,18 @@ __metadata:
   bin:
     next: dist/bin/next
   checksum: e32ff7cc79cb2fb21a2bb954778f582dbb76525e7b5286ddeaeb832e67c631da54c2369f144dd5f30d3e770666667d9c0d5e1ca9699681a2da26db8b628037a2
+  languageName: node
+  linkType: hard
+
+"nextjs-progressbar@npm:^0.0.10":
+  version: 0.0.10
+  resolution: "nextjs-progressbar@npm:0.0.10"
+  dependencies:
+    nprogress: ^0.2.0
+  peerDependencies:
+    next: ^6.0.0 || ^7.0.0 || ^8.0.0 || ^9.0.0 || ^10.0.0
+    react: ^16.0.0 || ^17.0.0
+  checksum: 588d6d5529a5c2d7c424df45dc538774b8773f7e79baa4878d61ac9bde01a6dbf98fff4f57836d7b211e785d0bc628dd6d8590c39495c6d2c3628fed7badcf66
   languageName: node
   linkType: hard
 
@@ -7200,6 +7266,13 @@ __metadata:
     gauge: ~2.7.3
     set-blocking: ~2.0.0
   checksum: 0cd63f127c1bbda403a112e83b11804aaee2b58b0bc581c3bde9b82e4d957c7ed0ad3bee499af706cdd3599bb93669d7cbbf29fb500407d35fe75687ac96e2c0
+  languageName: node
+  linkType: hard
+
+"nprogress@npm:^0.2.0":
+  version: 0.2.0
+  resolution: "nprogress@npm:0.2.0"
+  checksum: 652dfcfea776f9d9a2c3ad1f79b4cbd3056a03e7c6884966eab70fb184e8e70bfca9e0343ba89d11aa1ed95370d648fb638fab91b5dc027bdad54c8d37c96478
   languageName: node
   linkType: hard
 
@@ -7835,6 +7908,7 @@ __metadata:
     "@testing-library/react": ^11.2.7
     "@types/glob": ^7.1.3
     "@types/jest": ^26.0.23
+    "@types/lodash.uniq": ^4
     "@types/luxon": ^1.26.5
     "@types/react": 17.0.8
     "@types/react-dom": ^17.0.5
@@ -7858,8 +7932,11 @@ __metadata:
     husky: ^6.0.0
     jest: ^27.0.3
     lint-staged: ^11.0.0
+    lodash.uniq: ^4.5.0
     luxon: ^1.27.0
     next: 10.2.3
+    next-sitemap: ^1.6.102
+    nextjs-progressbar: ^0.0.10
     normalize.css: ^8.0.1
     npm-run-all: ^4.1.5
     polished: ^4.1.3

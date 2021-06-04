@@ -12,12 +12,17 @@ import {
   ArticleFooter,
   ArticleDate,
   ArticleTitle,
+  ArticleCategory,
+  ArticleTags,
 } from "components/article";
 import Head from "next/head";
 
 export type ArticlePageProps = { article: ArticleType };
 
 export default function ArticlePage({ article }: ArticlePageProps) {
+  // wtf??
+  if (!article) return <></>;
+
   return (
     <Article>
       <Head>
@@ -39,7 +44,13 @@ export default function ArticlePage({ article }: ArticlePageProps) {
       </ArticleHeader>
       <ArticleContent body={article.body} />
       <ArticleFooter>
-        <ArticleDate date={article.date} />
+        <div>
+          Posted in <ArticleCategory category={article.category} /> on{" "}
+          <ArticleDate date={article.date} />.
+        </div>
+        <div>
+          <ArticleTags tags={article.tags} />
+        </div>
       </ArticleFooter>
     </Article>
   );
@@ -61,7 +72,6 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
 
 export const getStaticPaths: GetStaticPaths = async () => {
   const paths = findArticlePaths();
-  const fallback = true;
 
-  return { paths, fallback };
+  return { paths, fallback: false };
 };
