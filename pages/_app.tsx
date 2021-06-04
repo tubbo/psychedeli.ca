@@ -1,5 +1,5 @@
 import { AppInitialProps } from "next/app";
-import { FunctionComponent, useEffect } from "react";
+import { FunctionComponent } from "react";
 import Head from "next/head";
 import Sun from "icons/sun.svg";
 import Moon from "icons/moon.svg";
@@ -22,15 +22,6 @@ export type AppProps = {
 function App({ Component, pageProps }: AppProps) {
   const [theme, toggle] = useTheme();
   const url = useCurrentURL();
-
-  useEffect(() => {
-    const body = document.querySelector("body");
-
-    if (body) {
-      body.className = "";
-      body.classList.add(theme.className);
-    }
-  }, [theme]);
 
   global({
     body: {
