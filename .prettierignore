@@ -4,3 +4,4 @@ yarn.lock
 icons/**/*
 .env.*
 .gitignore
+.node-version
