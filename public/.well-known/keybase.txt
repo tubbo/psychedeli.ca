@@ -1,0 +1,87 @@
+==================================================================
+https://keybase.io/tubbo
+--------------------------------------------------------------------
+
+I hereby claim:
+
+  * I am an admin of https://psychedeli.ca
+  * I am tubbo (https://keybase.io/tubbo) on keybase.
+  * I have a public key with fingerprint F787 E5BA AA9A E3DF 95FC  7791 D414 A7A0 9348 E547
+
+To do so, I am signing this object:
+
+{
+  "body": {
+    "key": {
+      "eldest_kid": "0101e38f924c27cab723e06b816d7a0ecddd12b6afa333871935d849f9685ec31b870a",
+      "fingerprint": "f787e5baaa9ae3df95fc7791d414a7a09348e547",
+      "host": "keybase.io",
+      "key_id": "d414a7a09348e547",
+      "kid": "0101e38f924c27cab723e06b816d7a0ecddd12b6afa333871935d849f9685ec31b870a",
+      "uid": "2f3750615a4c6d4777e0a5b337206500",
+      "username": "tubbo"
+    },
+    "merkle_root": {
+      "ctime": 1622993312,
+      "hash_meta": "c3bba7a90ec888b077459ee9ab1def55be6f0fbdb004e76a829f32b3cc8a9bc5",
+      "seqno": 20125874
+    },
+    "revoke": {
+      "sig_ids": [
+        "2acbd1251398435e5146c8508e5d607c0583d3d6b1310a43b0c1c50aad3f5bbd0f"
+      ]
+    },
+    "service": {
+      "hostname": "psychedeli.ca",
+      "protocol": "https:"
+    },
+    "type": "web_service_binding",
+    "version": 1
+  },
+  "ctime": 1622993325,
+  "expire_in": 157680000,
+  "prev": "276c3aa075f20f7e69101cbef462f38a7395f974446bca2954581182ba6de6a7",
+  "seqno": 59,
+  "tag": "signature"
+}
+
+which yields the signature:
+
+-----BEGIN PGP MESSAGE-----
+Version: Keybase OpenPGP v2.1.13
+Comment: https://keybase.io/crypto
+
+yMPVAnicrVNtbBRFGG4LbWiVTz9IwP5g+SgJpZnd2dnZbUEIxECF8gNoIWopM7uz
+1217t8ft3XFQLxKgEaFXgxK+SilYSG1FUYFaFChHGz5bhIBGvom0aguphkIMouJs
+gzEx/nT+TGbmeZ/3eZ/3nbbBAxLSEi8/X7/r/dldsxLPnQiFEpYe6f64XKC2sULI
+LhdKWf/GygzmBItKLUPIFoAIRAZVU5NkXcI6oViCDChUFRUDE8B0wzBEiSrEJBBC
+FYsaRIYqa6amqIjpUKQqBkTIFEzL52EBf8DyBTmtiVXMECWEaIRBw9SQqWOsiYYs
+yoTzalBWGZIxDyy2HTeCi6PEYVmWze/4oahf3n/g/2fdoX46yYQYAUVERNYVQ8YY
+M0AQhRBLQEEAuECHBXzEyzg6GKLUFqKZgpcFSstYUcC2g66zetBy30VFkjQNQlHi
+1RGnuMjLgoSH6ZBSXozG1amqSgHGMtIY0wgVDWYiRJliApMaFACZYYWokmZCiUJd
+V4lGdcRFOGyZzxayJSBKSMUylxBgYbuUudkdy8NNc4Ts1wWJ6JSXj0SoqTJEDImy
+oqsIcA8NBWAdIBUa0FCoCEVAZEiBLuoIEGJAE1FqAFMojLrZAmFL7yd3u/S0er+z
+Qi9mBiuzsnTXQX/ADtq6XcafioNBv5PtOhNc4XexyxktespSRC2fwYeER4RZwLFs
+H3eKI/9lmoQyBRbxWwFWZLkIhBUV8OXmYWG3VVjRISEAI1MCJmaKxkdBp8yUFd5F
+lWDIh03DsiwrVCeShmSkiqIqUaIYTCH4HxeRxnUSD+fk1vlIMBRgQvRE/I2BCYlp
+CSnJSe7vSUhLHfb3n0r2Dn3im3vj+qqSHXXbY2jsY09rpSfe3Xx2N1og3bfv9zl3
+h1inMn7q/HV/nzYu8lFbXXfDhij5Yt+41XbT3sEzvJk9SbG6G0kNe/fEd5XnvFrd
+Mzr/x+n5Z04+XmT3ej54OKr5JevOpos1ISIcuorKJx4u6EHehoex2+kbr3WsrVok
+xpM83fGCI+cLenOjV7e0r2yuvRf7NOPnTlC1w3ln3pzqwOTNa9rGgg9PxXO3Ppo/
+/GjGsXUFE+oX7zykT7PLhoeOX28alFMYzzsbSfd3tVW8MLWwKjJ5xMC36O11NSd3
+Xlry2uP2tIcjbxVum2aOqFw96fbCcGPN7qs5nn0H67fXjJmdHPut8fdJU4Sbucd7
+zp4+86pzs2LmhupXJiZtfTkynbL2Nc8tbz6d2PLZzJTkr1qzUgIL8jK23r2//2i4
+c3tKaMiD2OKhE44tQ8OyWvJyaeiSdmBRx5RvWjN/eC99tFb7y9FHIxP+qEuNXBB7
+x1+IVlY01r2bLz053LQ0OK/M/G5I9fnKkmcHDaWzMhrWXy4xz/XFVsntm6ScOV3i
+JDOtcVTJBljfsjw7te5gVtW4tS1X/NvmWgdurbzXdW1h4oRjCOY0vp044Fp+bWHE
+2zi/YcvO1i/vdez5M/xtH/EsiSxpvzjev/7OoweZYtOLwzeOmZH69Se1FZuT0juf
+MUraez+/kjVoSt73b0anjui48Beeogaj
+=QVKo
+-----END PGP MESSAGE-----
+
+And finally, I am proving ownership of this host by posting or
+appending to this document.
+
+View my publicly-auditable identity here: https://keybase.io/tubbo
+
+==================================================================
