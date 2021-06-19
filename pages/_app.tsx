@@ -9,7 +9,7 @@ import { Button } from "components/button";
 import { useTheme } from "theme";
 import { useCurrentURL } from "urls";
 import { global, config } from "stitches.config";
-import ProgressBar from "nextjs-progressbar";
+import { Loading } from "components/progress-bar";
 
 import "normalize.css/normalize.css";
 import "highlight.js/styles/a11y-dark.css";
@@ -52,7 +52,6 @@ function App({ Component, pageProps }: AppProps) {
         <meta property="og:url" content={url} />
         <meta property="og:site_name" content={process.env.NEXT_PUBLIC_TITLE} />
       </Head>
-      <ProgressBar color={config.theme.colors.green} />
       <Header>
         <Logo>
           <Link decoration="none" href="/">
@@ -60,6 +59,7 @@ function App({ Component, pageProps }: AppProps) {
           </Link>
         </Logo>
         <Navigation>
+          <Loading />
           <Button onClick={toggle}>
             {theme?.className === "dark" ? (
               <Sun width="1em" height="1em" />

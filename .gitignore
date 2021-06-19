@@ -4,6 +4,7 @@
 /node_modules
 /.pnp
 .pnp.js
+/.yarn/unplugged
 
 # testing
 /coverage
@@ -39,3 +40,7 @@ public/robots.txt
 
 # exported site
 out
+
+# sdk-specific yarn tools
+.vim
+.yarn/sdks

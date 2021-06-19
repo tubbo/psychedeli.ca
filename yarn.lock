@@ -2138,6 +2138,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@types/node@npm:^15.12.4":
+  version: 15.12.4
+  resolution: "@types/node@npm:15.12.4"
+  checksum: 64b121a7e805379382aeb3eefed56c4c34f1ebf5e818ba2c732e43beebc4fbde20be438f3eaaffd8dba5062f0e0c9ae085127b7239906d170eda816885a6c508
+  languageName: node
+  linkType: hard
+
 "@types/parse-json@npm:^4.0.0":
   version: 4.0.0
   resolution: "@types/parse-json@npm:4.0.0"
@@ -7083,18 +7090,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"nextjs-progressbar@npm:^0.0.10":
-  version: 0.0.10
-  resolution: "nextjs-progressbar@npm:0.0.10"
-  dependencies:
-    nprogress: ^0.2.0
-  peerDependencies:
-    next: ^6.0.0 || ^7.0.0 || ^8.0.0 || ^9.0.0 || ^10.0.0
-    react: ^16.0.0 || ^17.0.0
-  checksum: 588d6d5529a5c2d7c424df45dc538774b8773f7e79baa4878d61ac9bde01a6dbf98fff4f57836d7b211e785d0bc628dd6d8590c39495c6d2c3628fed7badcf66
-  languageName: node
-  linkType: hard
-
 "nice-try@npm:^1.0.4":
   version: 1.0.5
   resolution: "nice-try@npm:1.0.5"
@@ -7266,13 +7261,6 @@ __metadata:
     gauge: ~2.7.3
     set-blocking: ~2.0.0
   checksum: 0cd63f127c1bbda403a112e83b11804aaee2b58b0bc581c3bde9b82e4d957c7ed0ad3bee499af706cdd3599bb93669d7cbbf29fb500407d35fe75687ac96e2c0
-  languageName: node
-  linkType: hard
-
-"nprogress@npm:^0.2.0":
-  version: 0.2.0
-  resolution: "nprogress@npm:0.2.0"
-  checksum: 652dfcfea776f9d9a2c3ad1f79b4cbd3056a03e7c6884966eab70fb184e8e70bfca9e0343ba89d11aa1ed95370d648fb638fab91b5dc027bdad54c8d37c96478
   languageName: node
   linkType: hard
 
@@ -7910,6 +7898,7 @@ __metadata:
     "@types/jest": ^26.0.23
     "@types/lodash.uniq": ^4
     "@types/luxon": ^1.26.5
+    "@types/node": ^15.12.4
     "@types/react": 17.0.8
     "@types/react-dom": ^17.0.5
     "@types/react-responsive": ^8.0.2
@@ -7936,7 +7925,6 @@ __metadata:
     luxon: ^1.27.0
     next: 10.2.3
     next-sitemap: ^1.6.102
-    nextjs-progressbar: ^0.0.10
     normalize.css: ^8.0.1
     npm-run-all: ^4.1.5
     polished: ^4.1.3
